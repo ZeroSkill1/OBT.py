@@ -191,7 +191,7 @@ extractp.add_argument("filename", type=str, help="The OBT file to extract.")
 extractp.add_argument("outdir", type=str, nargs="?", help="The directory to output the extracted sections to. Defaults to the current directory.", default=os.curdir)
 
 createp = subp.add_parser("create", help="Create an OBT file from files extracted using the \"extract\" command.")
-createp.add_argument("-o", "--output", type=str, help="Output OBT file path.", dest="output")
+createp.add_argument("-o", "--output", type=str, help="Output OBT file path.", dest="output", required=True)
 createp.add_argument("entries", type=str, nargs="+", help="The section files to repack into the OBT format. Note that only the file name format of the \"extract\" command is accepted.")
 createp.add_argument("-w", "--overwrite", action="store_true", help="Whether or not to overwrite the output file if it already exists.", required=False, default=False, dest="overwrite")
 
